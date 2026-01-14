@@ -30,7 +30,7 @@ management:
 info:
   app:
     name: transactions-service
-    description: microservicio de administracion y registro de transacciones entre usuarios (local)
+    description: microservicio de administracion y registro de transacciones entre usuarios (github)
     version: 1.0.0
 
 eureka:
@@ -44,3 +44,4 @@ eureka:
 
 server:
   port: 8083
+
