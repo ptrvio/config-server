@@ -30,7 +30,7 @@ management:
 info:
   app:
     name: cards-service
-    description: microservicio de administracion y registro de tarjetas de credito y debito (local)
+    description: microservicio de administracion y registro de tarjetas de credito y debito (github)
     version: 1.0.0
 
 eureka:
@@ -44,3 +44,4 @@ eureka:
 
 server:
   port: 8085
+
