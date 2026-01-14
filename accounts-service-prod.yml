@@ -58,7 +58,7 @@ management:
 info:
   app:
     name: accounts-service
-    description: microservicio de administracion de billetera virtual (local)
+    description: microservicio de administracion de billetera virtual (docker)
     version: 1.0.0
 
 eureka:
@@ -81,4 +81,5 @@ server:
 logging:
   level:
     org.springframework.cloud.openfeign: DEBUG
+
     feign.Logger: DEBUG
