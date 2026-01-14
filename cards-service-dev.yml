@@ -36,12 +36,13 @@ info:
 eureka:
   instance:
     prefer-ip-address: false
-    statusPageUrlPath: http://localhost/actuator/info
-    healthCheckUrlPath: http://localhost/actuator/health
+    statusPageUrlPath: http://localhost:8085/actuator/info
+    healthCheckUrlPath: http://localhost:8085/actuator/health
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka
 
 server:
   port: 8085
+
 
