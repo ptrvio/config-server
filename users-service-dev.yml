@@ -1,0 +1,67 @@
+spring:
+  application:
+    name: users-service
+  cloud:
+    config:
+      uri: http://localhost:8888/
+      import:
+        optional:configserver:
+      enabled: false
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate.event.merge.entity_copy_observer: allow
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    driver-class-name: ${DB_DRIVER}
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: ${dh.keycloak.clientId}
+            client-secret: ${dh.keycloak.clientSecret}
+            scope: openid
+        provider:
+          keycloak:
+            issuer-uri: ${dh.keycloak.serverUrl}/realms/${dh.keycloak.realm}
+      resourceserver:
+        jwt:
+          issuer-uri: ${dh.keycloak.serverUrl}/realms/${dh.keycloak.realm}
+
+dh:
+  keycloak:
+    realm: ${REALM_NAME}
+    serverUrl: http://localhost:8080
+    clientId: ${CLIENT_ID}
+    clientSecret: ${CLIENT_SECRET}
+    tokenEndpoint: http://localhost:8080/realms/dh-money-users/protocol/openid-connect/token
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info
+  info:
+    env:
+      enabled: true
+info:
+  app:
+    name: users-service
+    description: microservicio de registro y logueo local (desde config server)
+    version: 1.0.0
+
+eureka:
+  instance:
+    prefer-ip-address: false
+    statusPageUrlPath: http://localhost:8081/actuator/info
+    healthCheckUrlPath: http://localhost:8081/actuator/health
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+server:
+  port: 8081
