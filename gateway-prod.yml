@@ -153,7 +153,7 @@ management:
 info:
   app:
     name: Gateway
-    description: API gateway
+    description: API gateway (docker)
     version: 1.0.0
 
 eureka:
@@ -173,4 +173,5 @@ eureka:
 
 
 server:
+
   port: 8084
