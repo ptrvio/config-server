@@ -1,12 +1,4 @@
 spring:
-  application:
-    name: users-service
-  cloud:
-    config:
-      uri: http://config-server:8888/
-      import:
-        optional:configserver:
-      enabled: false
   jpa:
     hibernate:
       ddl-auto: update
@@ -73,6 +65,7 @@ eureka:
     serviceUrl:
       defaultZone: http://eureka-server:8761/eureka/
       #defaultZone: http://localhost:8761/eureka
+      
 server:
-
   port: 8081
+
