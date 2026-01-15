@@ -1,12 +1,4 @@
 spring:
-  application:
-    name: transactions-service
-  cloud:
-    config:
-      uri: http://localhost:8888/
-      import:
-        optional:configserver:
-      enabled: false
   jpa:
     hibernate:
       ddl-auto: update
@@ -44,4 +36,5 @@ eureka:
 
 server:
   port: 8083
+
 
