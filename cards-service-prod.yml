@@ -1,12 +1,4 @@
 spring:
-  application:
-    name: cards-service
-  cloud:
-    config:
-      uri: http://config-server:8888/
-      import:
-        optional:configserver:
-      enabled: false
   jpa:
     hibernate:
       ddl-auto: update
@@ -50,4 +42,5 @@ eureka:
 
 server:
   port: 8085
+
 
