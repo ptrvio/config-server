@@ -1,14 +1,4 @@
 spring:
-  application:
-    name: gateway
-  config:
-    import: "optional:configserver:"
-  cloud:
-    config:
-      uri: http://config-server:8888/
-      #discovery:
-        #serviceId: config-server
-        #enabled: true
     gateway:
       discovery:
         locator:
@@ -175,3 +165,4 @@ eureka:
 server:
 
   port: 8084
+
