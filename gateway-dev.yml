@@ -155,8 +155,10 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka
-
-
+dh:
+  keycloak:
+    serverUrl: ${SERVER_URL}
 server:
   port: 8084
+
 
